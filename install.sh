@@ -1,8 +1,9 @@
 #!/bin/sh
 . /etc/os-release
-if [ $ID == (ubuntu debian)]
-  then
+case $ID in
+  ubuntu|debian)
     apt install libvte9 libglade-2.0
-fi
+  ;;
+esac
 
 cp -r ./gtkdialog/* /
